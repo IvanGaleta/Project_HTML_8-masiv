@@ -38,8 +38,8 @@ const arrySplice = arry9.splice(1,2);
 console.log(arry9);
 
 const arry10 = [1,2,3,4,5];
-const arrySplice1 = arry10.splice(0,1);
-const arrySplice2 = arry10.splice(3,1);
+const arrySplice1 = arry10.splice(1,3);
+// const arrySplice2 = arry10.splice(3,1);
 console.log(arry10);
 
 const arry11 = [1,2,3,4,5];
@@ -48,7 +48,7 @@ console.log(arry11);
 
 const arry12 = [1,2,3,4,5];
 const arrySplice4 = arry12.splice( 1, 0,'a', 'b');
-const arrySplice5 = arry12.splice( 6, 0,'c');
+const arrySplice5 = arry12.splice( -1, 0,'c');
 const arrySplice6 = arry12.splice( 8, 0,'e');
 console.log(arry12);
 //----------------sort-----------------//
@@ -60,8 +60,9 @@ console.log(arry13);
 //---------------forEach--------------//
 const arry14 = [{firstName: `Test`, lastName: `Testovich`, age: 42, gender: `male`,}, {firstName: `User`, lastName: `Userovich`, age: 12, gender: `male`,},	{firstName: `Testya`, lastName: `Testovna`, age: 16, gender: `emale`,},		{firstName: `Logina`, lastName: `Consolevna`, age: 42, gender: `female`,} ];
 const arryForEach = arry14.forEach(function(elem){
-    console.log(elem);
+    return console.log(`${elem.firstName} ${elem.lastName} ${elem.age} ${elem.gender}`);
 });
+
 // ----------------map-----------------//
 const arry15 = [{firstName: `Test`, lastName: `Testovich`, age: 42, gender: `male`,}, {firstName: `User`, lastName: `Userovich`, age: 12, gender: `male`,},	{firstName: `Testya`, lastName: `Testovna`, age: 16, gender: `emale`,},		{firstName: `Logina`, lastName: `Consolevna`, age: 42, gender: `female`,}];
 const arryMap = arry15.map(function(elem){
@@ -72,10 +73,10 @@ const arryMap = arry15.map(function(elem){
 console.log(arryMap);
 
 //----------------filter---------------//
-const arry16 = [{firstName: `Test`, lastName: `Testovich`, age: 42, gender: `male`,}, {firstName: `User`, lastName: `Userovich`, age: 12, gender: `male`,},	{firstName: `Testya`, lastName: `Testovna`, age: 16, gender: `emale`,},		{firstName: `Logina`, lastName: `Consolevna`, age: 42, gender: `female`,}];
-const arryFilter = arry16.filter(function(elem){
-    return elem.age > 18;
-    return elem.gender = `male`;
+const arry16 = [{firstName: `Test`, lastName: `Testovich`, age: 42, gender: `male`,}, {firstName: `User`, lastName: `Userovich`, age: 12, gender: `male`,},	{firstName: `Testya`, lastName: `Testovna`, age: 16, gender: `female`,},		{firstName: `Logina`, lastName: `Consolevna`, age: 42, gender: `female`,}];
+const arryFilter = arry16.filter(function(elem){   
+    return elem.gender === 'female' && elem.age >= 18;     
+    
 });
 console.log(arryFilter);
 //--------------flat-------------------//
